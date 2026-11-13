@@ -83,10 +83,19 @@ class AuthService {
     return this.currentUser;
   }
 
-  logout() {
+  logout(reload = false) {
     this.currentUser = null;
     localStorage.removeItem(SESSION_KEY);
-    window.location.reload();
+    if (reload) {
+      window.location.reload();
+    } else if (window.app && typeof window.app.mostrarLogin === 'function') {
+      window.app.mostrarLogin();
+    }
+  }
+
+  limparSessao() {
+    this.currentUser = null;
+    localStorage.removeItem(SESSION_KEY);
   }
 
   isAuthenticated() {

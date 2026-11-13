@@ -15,7 +15,7 @@ class AppController {
   init() {
     // Inicia sempre pelo fluxo oficial do Figma: Tela de Login -> Seleção de Perfis -> Portal
     // Limpa qualquer sessão residual antiga para garantir que o usuário veja a tela de login
-    window.auth.logout();
+    window.auth.limparSessao();
     this.mostrarLogin();
 
     this.configurarBotoesFlutuantes();
@@ -933,7 +933,9 @@ class AppController {
   }
 
   executarLogout() {
-    window.auth.logout();
+    window.auth.limparSessao();
+    this.mostrarLogin();
+    this.mostrarToast('Sessão encerrada com sucesso.', 'info');
   }
 
   // --- Modais de Recuperação de Senha e Instalação ---
