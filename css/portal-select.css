@@ -3,6 +3,8 @@
    ============================================================================= */
 
 .portal-select-page {
+  position: relative;
+  z-index: 200;
   width: 100%;
   min-height: 100vh;
   background-color: #f8fafc;

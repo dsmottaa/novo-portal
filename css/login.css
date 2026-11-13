@@ -5,6 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
 .login-split-page {
+  position: relative;
+  z-index: 200;
   width: 100%;
   min-height: 100vh;
   background-color: #f1f3f7;
