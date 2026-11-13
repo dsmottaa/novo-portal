@@ -85,8 +85,7 @@
 }
 
 html {
-  overflow-y: scroll;
-  scrollbar-gutter: stable;
+  
   font-size: var(--font-base-size);
   scroll-behavior: smooth;
 }
@@ -97,7 +96,7 @@ body {
   color: var(--text-main);
   min-height: 100vh;
   line-height: 1.5;
-  overflow-x: hidden;
+  
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -130,7 +129,7 @@ body {
   top: 0;
   bottom: 0;
   z-index: 100;
-  overflow-x: hidden;
+  
   overflow-y: auto;
   transition: background-color 0.25s ease, border-color 0.25s ease;
 }
@@ -178,7 +177,7 @@ body {
   align-items: center;
   flex: 1;
   overflow-y: auto;
-  overflow-x: hidden;
+  
   padding-right: 2px;
   padding-bottom: 8px;
 }
