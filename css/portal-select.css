@@ -8,6 +8,7 @@
   inset: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   z-index: 1000;
   background-color: #f8fafc;
   display: flex;
@@ -16,6 +17,7 @@
   padding: 24px;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-y: auto;
+  scrollbar-gutter: stable;
 }
 
 .portal-select-card {
@@ -88,7 +90,7 @@
 .portal-role-card:hover {
   border-color: #3b82f6;
   box-shadow: 0 8px 24px rgba(59, 130, 246, 0.08);
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
 }
 
 .portal-role-card.active {
@@ -139,7 +141,7 @@
 }
 
 .portal-role-card:hover .role-icon-circle {
-  transform: scale(1.06);
+  /* transform: scale(1.06); */
 }
 
 .icon-coord {

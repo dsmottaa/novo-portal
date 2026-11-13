@@ -11,6 +11,7 @@
   inset: 0;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   z-index: 1000;
   background-color: #f1f3f7;
   display: flex;
@@ -20,6 +21,7 @@
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: #111827;
   overflow-y: auto;
+  scrollbar-gutter: stable;
 }
 
 .login-split-container {
@@ -189,7 +191,7 @@
 }
 
 .login-btn-submit:active {
-  transform: scale(0.99);
+  /* transform: scale(0.99); */
 }
 
 /* Link Esqueceu a Senha */
@@ -294,7 +296,7 @@
 
 .portal-role-card:hover {
   border-color: #93c5fd;
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -409,7 +411,7 @@
 }
 
 .btn-confirmar-perfil:active {
-  transform: scale(0.99);
+  /* transform: scale(0.99); */
 }
 
 .btn-voltar-login {
@@ -664,7 +666,7 @@
 .turma-item-row:hover {
   border-color: #1e70bf;
   background: #f8fbff;
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
   box-shadow: 0 6px 16px rgba(30, 112, 191, 0.1);
 }
 
@@ -776,7 +778,7 @@
 }
 
 .btn-turma-geral:active {
-  transform: scale(0.99);
+  /* transform: scale(0.99); */
 }
 
 @media (max-width: 600px) {
