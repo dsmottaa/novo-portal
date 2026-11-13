@@ -1,21 +1,17 @@
 /* =============================================================================
-   RENOVA SENAI - TELA DE SELEÇÃO DE PERFIL / PORTAL (FIGMA OFICIAL)
-   Fundo limpo e suave, Card centralizado, 4 cards de perfis com seletores
+   RENOVA SENAI - TELA DE SELEÇÃO DE PERFIL / PORTAL (OFICIAL FIGMA)
    ============================================================================= */
 
 .portal-select-page {
-  
+  width: 100%;
   min-height: 100vh;
-  
-  width: 100vw;
-  min-height: 100vh;
-  
   background-color: #f8fafc;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 32px 20px;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
 }
 
 .portal-select-card {
@@ -25,13 +21,14 @@
   border-radius: 18px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
   border: 1px solid #f1f5f9;
-  padding: 48px 44px;
+  padding: 44px 40px;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 .portal-select-header {
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   text-align: left;
 }
 
@@ -55,7 +52,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
 }
 
 @media (max-width: 820px) {
@@ -81,14 +78,14 @@
   align-items: center;
   text-align: center;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   user-select: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .portal-role-card:hover {
   border-color: #3b82f6;
-  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.08);
-  /* transform: translateY(-2px); */
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.12);
 }
 
 .portal-role-card.active {
@@ -110,7 +107,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
 }
 
 .portal-role-card.active .role-radio-circle {
@@ -135,11 +131,6 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  transition: transform 0.2s;
-}
-
-.portal-role-card:hover .role-icon-circle {
-  /* transform: scale(1.06); */
 }
 
 .icon-coord {
@@ -197,19 +188,15 @@
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 14px rgba(195, 22, 28, 0.25);
+  transition: background-color 0.2s;
 }
 
 .btn-confirmar-perfil:hover {
   background: #a81117;
-}
-
-.btn-confirmar-perfil:active {
-  transform: scale(0.99);
 }
 
 .btn-voltar-login {
@@ -222,7 +209,6 @@
   cursor: pointer;
   padding: 8px 16px;
   border-radius: 6px;
-  transition: color 0.15s;
 }
 
 .btn-voltar-login:hover {
