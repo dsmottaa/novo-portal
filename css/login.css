@@ -1,0 +1,793 @@
+/* =============================================================================
+   RENOVA SENAI - AUTENTICAÇÃO E SELEÇÃO DE PERFIL / PORTAL
+   Layout idêntico às telas oficiais SENAI
+   ============================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+/* --- 1. TELA DE LOGIN (SPLIT SCREEN) --- */
+.login-split-page {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  background-color: #f1f3f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #111827;
+  overflow-y: auto;
+}
+
+.login-split-container {
+  display: flex;
+  width: 100%;
+  max-width: 890px;
+  min-height: 530px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Coluna Esquerda: Imagem da Fachada do Prédio SENAI */
+.login-left-banner {
+  flex: 1.05;
+  background-image: url('../img/senai-fachada.jpg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 200% 100%;
+  position: relative;
+  min-height: 380px;
+}
+
+/* Coluna Direita: Formulário de Autenticação */
+.login-right-content {
+  flex: 1;
+  background: #ffffff;
+  padding: 48px 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form-box {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.login-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #091e42;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.4px;
+}
+
+.login-subtitle {
+  font-size: 13.5px;
+  color: #64748b;
+  margin: 0 0 26px 0;
+  line-height: 1.45;
+}
+
+/* Campos de Formulário */
+.login-field-group {
+  margin-bottom: 18px;
+}
+
+.login-field-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #091e42;
+  margin-bottom: 7px;
+}
+
+.login-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-field-input {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #d3d7de;
+  border-radius: 8px;
+  padding: 0 14px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #111827;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-field-input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.login-field-input:focus {
+  border-color: #1d63b8;
+  box-shadow: 0 0 0 3px rgba(29, 99, 184, 0.12);
+}
+
+.login-input-wrapper .login-field-input[type="password"] {
+  padding-right: 44px;
+}
+
+.login-btn-eye {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s;
+}
+
+.login-btn-eye:hover {
+  color: #091e42;
+}
+
+/* Lembrar de Mim */
+.login-remember-row {
+  display: flex;
+  align-items: center;
+  margin: 14px 0 20px 0;
+}
+
+.login-remember-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+  user-select: none;
+}
+
+.login-remember-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1.5px solid #cbd5e1;
+  accent-color: #c3161c;
+  cursor: pointer;
+}
+
+/* Botão Entrar */
+.login-btn-submit {
+  width: 100%;
+  height: 44px;
+  background: #c3161c;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-btn-submit:hover {
+  background: #a81117;
+}
+
+.login-btn-submit:active {
+  transform: scale(0.99);
+}
+
+/* Link Esqueceu a Senha */
+.login-forgot-wrap {
+  margin-top: 16px;
+  text-align: left;
+}
+
+.login-forgot-link {
+  font-size: 12.5px;
+  color: #1d63b8;
+  font-weight: 500;
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+.login-forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade Login */
+@media (max-width: 768px) {
+  .login-split-container {
+    flex-direction: column;
+    max-width: 440px;
+  }
+  .login-left-banner {
+    min-height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+  .login-right-content {
+    padding: 32px 24px;
+  }
+}
+
+/* --- 2. TELA DE SELEÇÃO DE PERFIL / PORTAL --- */
+.portal-select-page {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  background-color: #f1f3f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-y: auto;
+}
+
+.portal-select-card {
+  width: 100%;
+  max-width: 860px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 38px 42px 34px 42px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.07);
+}
+
+.portal-select-header {
+  margin-bottom: 24px;
+}
+
+.portal-select-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #091e42;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.3px;
+}
+
+.portal-select-subtitle {
+  font-size: 14px;
+  color: #475569;
+  margin: 0;
+}
+
+/* Grid com os 4 Cards */
+.portal-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.portal-role-card {
+  position: relative;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px 14px 20px 14px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portal-role-card:hover {
+  border-color: #93c5fd;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Estado Ativo / Selecionado */
+.portal-role-card.active {
+  border-color: #1e70bf;
+  box-shadow: 0 0 0 1px #1e70bf, 0 8px 24px rgba(30, 112, 191, 0.14);
+  background: #ffffff;
+}
+
+/* Indicador de Rádio no Canto Superior Direito */
+.role-radio-circle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal-role-card.active .role-radio-circle {
+  border-color: #1e70bf;
+  background: #1e70bf;
+  box-shadow: inset 0 0 0 3px #ffffff;
+}
+
+/* Círculos de Ícones */
+.role-icon-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6px 0 16px 0;
+  transition: transform 0.2s;
+}
+
+.portal-role-card:hover .role-icon-circle {
+  transform: scale(1.05);
+}
+
+.role-icon-circle.icon-coord {
+  background: #e1effe;
+  color: #1e70bf;
+}
+
+.role-icon-circle.icon-prof {
+  background: #e1effe;
+  color: #1e70bf;
+}
+
+.role-icon-circle.icon-aluno {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.role-icon-circle.icon-orientador {
+  background: #e1effe;
+  color: #1e70bf;
+}
+
+.role-card-title {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #091e42;
+  margin: 0 0 8px 0;
+}
+
+.role-card-desc {
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #64748b;
+  margin: 0;
+  flex: 1;
+}
+
+/* Botão de Ação Inferior */
+.portal-select-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-confirmar-perfil {
+  width: 100%;
+  max-width: 540px;
+  height: 46px;
+  background: #c3161c;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-confirmar-perfil:hover {
+  background: #a81117;
+}
+
+.btn-confirmar-perfil:active {
+  transform: scale(0.99);
+}
+
+.btn-voltar-login {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 12.5px;
+  color: #64748b;
+  cursor: pointer;
+  padding: 4px 8px;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.btn-voltar-login:hover {
+  color: #091e42;
+  text-decoration: underline;
+}
+
+/* Responsividade Seleção de Perfil */
+@media (max-width: 820px) {
+  .portal-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .portal-select-card {
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portal-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- MODAL ESQUECEU A SENHA --- */
+.login-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  padding: 16px;
+}
+
+.login-modal-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  font-family: inherit;
+}
+
+.login-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+.login-modal-close:hover {
+  color: #0f172a;
+}
+
+.login-modal-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-modal-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.login-modal-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+
+.login-modal-desc {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.login-modal-feedback {
+  text-align: center;
+  padding: 16px 0;
+}
+
+.login-feedback-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px auto;
+}
+
+.login-feedback-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+
+.login-feedback-text {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 16px 0;
+}
+
+.btn-modal-subtle {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+}
+
+.btn-modal-subtle:hover {
+  background: #e2e8f0;
+}
+
+.sidebar-footer {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.btn-switch-portal:hover {
+  color: #1e70bf !important;
+  background-color: rgba(30, 112, 191, 0.08) !important;
+}
+
+/* Realce Vermelho Exclusivo para Perfil ALUNO (Figma Flow) */
+.portal-role-card[data-role="aluno"].active {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 1px #dc2626, 0 8px 24px rgba(220, 38, 38, 0.16) !important;
+  background: #fffdfd;
+}
+
+.portal-role-card[data-role="aluno"].active .role-radio-circle {
+  border-color: #dc2626 !important;
+  background: #dc2626 !important;
+  box-shadow: inset 0 0 0 3px #ffffff !important;
+}
+
+/* --- 3. TELA DE SELEÇÃO DE TURMAS DO DOCENTE (FIGMA FLOW) --- */
+.turma-select-page {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  background-color: #f1f3f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-y: auto;
+}
+
+.turma-select-card {
+  width: 100%;
+  max-width: 760px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 36px 40px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.07);
+}
+
+.turma-select-header {
+  margin-bottom: 22px;
+}
+
+.turma-select-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e1effe;
+  color: #1e70bf;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.turma-select-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #091e42;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.3px;
+}
+
+.turma-select-subtitle {
+  font-size: 13.5px;
+  color: #475569;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.turma-select-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 26px;
+  max-height: 52vh;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.turma-item-row {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 16px;
+  text-decoration: none;
+  user-select: none;
+}
+
+.turma-item-row:hover {
+  border-color: #1e70bf;
+  background: #f8fbff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(30, 112, 191, 0.1);
+}
+
+.turma-item-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #e0f0fe;
+  color: #1e70bf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.turma-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.turma-item-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.turma-item-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.turma-item-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: #dcfce7;
+  color: #15803d;
+  flex-shrink: 0;
+}
+
+.turma-item-arrow {
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.turma-item-row:hover .turma-item-arrow {
+  color: #1e70bf;
+  transform: translateX(4px);
+}
+
+.turma-select-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 18px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-turma-voltar {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.btn-turma-voltar:hover {
+  color: #091e42;
+  background: #f1f5f9;
+}
+
+.btn-turma-geral {
+  background: #1e70bf;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-turma-geral:hover {
+  background: #165ba0;
+}
+
+.btn-turma-geral:active {
+  transform: scale(0.99);
+}
+
+@media (max-width: 600px) {
+  .turma-select-card {
+    padding: 24px 18px;
+  }
+  .turma-select-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-turma-voltar, .btn-turma-geral {
+    text-align: center;
+  }
+}
