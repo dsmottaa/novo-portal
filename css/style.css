@@ -632,14 +632,14 @@ body {
    BANNER VERMELHO OFICIAL (IDÊNTICO À IMAGEM 1)
    ============================================================================= */
 .senai-welcome-banner {
-  background: linear-gradient(135deg, var(--senai-red) 0%, var(--senai-red-dark) 100%);
+  background: linear-gradient(135deg, #103766 0%, #1a569c 50%, #0284c7 100%);
   color: #ffffff;
   border-radius: var(--radius-md);
   padding: 32px 36px;
   margin-bottom: 32px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 25px -5px rgba(var(--senai-red-rgb, 195, 22, 28), 0.3);
+  box-shadow: 0 10px 25px -5px rgba(16, 55, 102, 0.25);
 }
 
 /* Brilhos e grafismos sutis de fundo do banner */
