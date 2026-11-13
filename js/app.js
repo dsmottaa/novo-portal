@@ -121,10 +121,19 @@ class AppController {
     }).join('');
   }
 
+  filtrarTurmasCards(termo) {
+    const q = (termo || '').trim().toLowerCase();
+    const cards = document.querySelectorAll('#turmasCardsGrid .course-card');
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.style.display = text.includes(q) ? 'flex' : 'none';
+    });
+  }
+
   selecionarTurmaInicial(turmaId) {
     window.auth.setPerfil('PROFESSOR');
     this.mostrarPortal();
-    this.abrirTurma(turmaId);
+    this.abrirTurmaDetalhe(turmaId);
     const turma = window.db ? window.db.getTurmaById(turmaId) : null;
     const nome = turma ? turma.codigo : '';
     this.mostrarToast(`Acessando turma ${nome}...`, 'success');
@@ -343,6 +352,14 @@ class AppController {
       if (window.coordenadorController) {
         window.coordenadorController.init();
       }
+    } else if (tabId.startsWith('aluno_')) {
+      if (window.portalAlunoController) {
+        window.portalAlunoController.init();
+      }
+    } else if (tabId.startsWith('orientador_')) {
+      if (window.portalOrientadorController) {
+        window.portalOrientadorController.init();
+      }
     }
 
     // Aplica restrições de somente leitura se o usuário for Coordenador
@@ -416,6 +433,15 @@ class AppController {
         </div>
       `;
     }).join('');
+  }
+
+  filtrarTurmasCards(termo) {
+    const q = (termo || '').trim().toLowerCase();
+    const cards = document.querySelectorAll('#turmasCardsGrid .course-card');
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.style.display = text.includes(q) ? 'flex' : 'none';
+    });
   }
 
   getTabLabel(filtro) {

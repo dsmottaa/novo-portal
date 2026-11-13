@@ -760,13 +760,47 @@
         <!-- PORTAL DO ORIENTADOR: BANCAS -->
 
         <section id="tabSection_cursos" class="tab-view-section">
-          <!-- Banner Vermelho Oficial com Boas-vindas (Imagem 1) -->
-          <div class="senai-welcome-banner">
-            <h2 id="bannerWelcomeName" class="banner-title">Bem-vindo(a) de volta, NATHAN! ✨</h2>
-            <p class="banner-subtitle">
-              Acompanhe seu aprendizado e mergulhe no conhecimento de forma simples e prática. Gerencie turmas, diários
-              de classe, avaliações e frequências com eficiência.
-            </p>
+          <!-- Hero Banner Oficial Figma (Portal do Docente) -->
+          <div class="portal-hero-banner banner-prof">
+            <div class="portal-hero-info">
+              <h2 id="bannerWelcomeName">Portal do Docente — Gestão Acadêmica ✨</h2>
+              <p>Acompanhamento de turmas, chamadas, avaliações e desempenho pedagógico dos estudantes.</p>
+            </div>
+            <div class="portal-hero-badge">
+              Semestre Letivo 2026/1
+            </div>
+          </div>
+
+          <!-- Métricas Rápidas do Docente (Cards Figma) -->
+          <div class="portal-stats-grid">
+            <div class="portal-stat-card">
+              <div class="portal-stat-icon stat-icon-blue">📚</div>
+              <div>
+                <div class="portal-stat-value" id="statProfTurmasAtivas">3</div>
+                <div class="portal-stat-label">Turmas Ativas</div>
+              </div>
+            </div>
+            <div class="portal-stat-card">
+              <div class="portal-stat-icon stat-icon-green">👥</div>
+              <div>
+                <div class="portal-stat-value" id="statProfTotalAlunos">96</div>
+                <div class="portal-stat-label">Alunos Matriculados</div>
+              </div>
+            </div>
+            <div class="portal-stat-card">
+              <div class="portal-stat-icon stat-icon-purple">📊</div>
+              <div>
+                <div class="portal-stat-value">91.8%</div>
+                <div class="portal-stat-label">Média Frequência</div>
+              </div>
+            </div>
+            <div class="portal-stat-card">
+              <div class="portal-stat-icon stat-icon-red">📋</div>
+              <div>
+                <div class="portal-stat-value">100%</div>
+                <div class="portal-stat-label">Diários em Dia</div>
+              </div>
+            </div>
           </div>
 
           <!-- Título e Abas de Filtro -->
@@ -818,26 +852,27 @@
              =================================================================== -->
         <section id="tabSection_coordenador" class="tab-view-section" style="display: none;">
 
-          <!-- Header Principal -->
-          <div class="coord-portal-header">
-            <div>
-              <div class="coord-header-title">&#128203; Portal do Coordenador</div>
-              <div class="coord-header-subtitle">Escola SENAI Roberto Simonsen &bull; Gestão Acadêmica Integrada</div>
+          <!-- Hero Banner Oficial Figma (Portal do Coordenador) -->
+          <div class="portal-hero-banner banner-coord">
+            <div class="portal-hero-info">
+              <h2>Portal da Coordenação Pedagógica 📋</h2>
+              <p>Supervisão acadêmica, gestão de turmas, atribuição de docentes e homologação de diários.</p>
             </div>
-            <div class="coord-header-actions">
+            <div class="coord-header-actions" style="display:flex; align-items:center; gap:10px;">
               <button type="button" class="btn btn-outline btn-sm"
                 onclick="window.coordenadorController.abrirModalSolicitarFechamento()"
                 id="btnSolicitarFechamento"
-                style="display:none;"
+                style="display:none; background:rgba(255,255,255,0.15); color:#fff; border-color:rgba(255,255,255,0.3);"
                 title="Solicitar fechamento do diário">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
                 </svg>
-                Solicitar Fechamento do Diário
+                Solicitar Fechamento
               </button>
               <button type="button" class="btn btn-primary"
                 id="btnNovaTurmaCoord"
                 onclick="window.coordenadorController.abrirModalNovaTurma()"
+                style="background:#ffffff; color:#1e3a8a; border:none; font-weight:700;"
                 title="Criar nova turma">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>

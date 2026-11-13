@@ -33,8 +33,8 @@
   --radius-lg: 20px;
   --radius-full: 9999px;
 
-  /* Tipografia */
-  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  /* Tipografia Oficial SENAI */
+  --font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-base-size: 16px;
 
   /* Dimensões */
